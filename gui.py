@@ -138,6 +138,9 @@ class ToolLibraryApp:
         if not name or not contact:
             messagebox.showwarning("Warning", "All fields are required.")
             return
+        if not contact.isdigit():
+            messagebox.showwarning("Validation Error", "Please enter a valid numeric format for the contact number.")
+            return
             
         database.add_member(name, contact, join_date)
         messagebox.showinfo("Success", f"Member '{name}' added successfully.")
