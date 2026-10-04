@@ -311,7 +311,7 @@ class ToolLibraryApp:
         loan_date = date.today().strftime("%Y-%m-%d")
         due_date = (date.today() + timedelta(days=7)).strftime("%Y-%m-%d")
         
-        database.borrow_tool(tool_id, member_id, loan_date, due_date)
+        database.borrow_tool(tool_id, member_id)
         
         self.load_tools()
         messagebox.showinfo("Success", "Tool borrowed successfully.")
@@ -329,7 +329,7 @@ class ToolLibraryApp:
             return
             
         return_date = date.today().strftime("%Y-%m-%d")
-        database.return_tool(tool_id, return_date)
+        database.return_tool(tool_id)
         
         self.load_tools()
         messagebox.showinfo("Success", "Tool returned successfully.")

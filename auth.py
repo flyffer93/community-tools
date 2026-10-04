@@ -1,5 +1,5 @@
 import sqlite3
-from database import get_connection
+from database import connect as get_connection
 
 def verify_login(username, password):
     conn = get_connection()
